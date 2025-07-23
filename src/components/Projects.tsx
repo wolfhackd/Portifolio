@@ -26,23 +26,53 @@ interface ProjectCardProps {
 
 export const Projects = () => {
   const TECHNOLOGIES: Technologies = {
+    // Front-end
+    html: { name: 'HTML5', color: 'bg-orange-500' },
+    css: { name: 'CSS3', color: 'bg-blue-600' },
+    javascript: { name: 'JavaScript', color: 'bg-yellow-400' },
+    typescript: { name: 'TypeScript', color: 'bg-blue-500' },
     react: { name: 'React', color: 'bg-sky-500' },
     reactNative: { name: 'React Native', color: 'bg-purple-500' },
-    node: { name: 'Node.js', color: 'bg-green-600' },
-    fastify: { name: 'Fastify', color: 'bg-gray-600' },
-    docker: { name: 'Docker', color: 'bg-blue-400' },
-    postgres: { name: 'PostgreSQL', color: 'bg-blue-700' },
-    drizzle: { name: 'Drizzle ORM', color: 'bg-orange-400' },
-    apiRest: { name: 'API REST', color: 'bg-emerald-600' },
+    nextjs: { name: 'Next.js', color: 'bg-gray-800' },
     vite: { name: 'Vite', color: 'bg-purple-400' },
-    typescript: { name: 'TypeScript', color: 'bg-blue-500' },
     tailwind: { name: 'Tailwind CSS', color: 'bg-cyan-500' },
+    bootstrap: { name: 'Bootstrap', color: 'bg-violet-600' },
     reactRouter: { name: 'React Router DOM', color: 'bg-red-400' },
     reactQuery: { name: 'React Query', color: 'bg-pink-400' },
     hooks: { name: 'Hooks Personalizados', color: 'bg-yellow-500' },
-    prisma: { name: 'Prisma', color: 'bg-pink-500' },
-    firebase: { name: 'Firebase', color: 'bg-yellow-400' },
+
+    // Back-end
+    node: { name: 'Node.js', color: 'bg-green-600' },
+    express: { name: 'Express.js', color: 'bg-gray-700' },
+    fastify: { name: 'Fastify', color: 'bg-gray-600' },
+    apiRest: { name: 'API REST', color: 'bg-emerald-600' },
+    graphql: { name: 'GraphQL', color: 'bg-pink-600' },
+
+    // Banco de Dados
+    postgres: { name: 'PostgreSQL', color: 'bg-blue-700' },
+    mysql: { name: 'MySQL', color: 'bg-blue-400' },
+    sqlite: { name: 'SQLite', color: 'bg-blue-300' },
     mongodb: { name: 'MongoDB', color: 'bg-green-600' },
+    firebase: { name: 'Firebase', color: 'bg-yellow-400' },
+    supabase: { name: 'Supabase', color: 'bg-green-400' },
+
+    // ORMs e Ferramentas
+    prisma: { name: 'Prisma', color: 'bg-pink-500' },
+    drizzle: { name: 'Drizzle ORM', color: 'bg-orange-400' },
+    sequelize: { name: 'Sequelize', color: 'bg-indigo-500' },
+
+    // DevOps e Infra
+    docker: { name: 'Docker', color: 'bg-blue-400' },
+    git: { name: 'Git', color: 'bg-red-500' },
+    github: { name: 'GitHub', color: 'bg-gray-800' },
+    vercel: { name: 'Vercel', color: 'bg-black' },
+    netlify: { name: 'Netlify', color: 'bg-teal-500' },
+
+    // Outras tecnologias
+    jest: { name: 'Jest', color: 'bg-red-600' },
+    cypress: { name: 'Cypress', color: 'bg-green-500' },
+    vitest: { name: 'Vitest', color: 'bg-lime-500' },
+    figma: { name: 'Figma', color: 'bg-pink-500' },
   };
 
   const PROJECTS: Project[] = [
@@ -74,15 +104,13 @@ export const Projects = () => {
       technologies: [
         'react',
         'vite',
-        'typescript',
+        'javascript',
         'tailwind',
         'reactRouter',
-        'reactQuery',
         'hooks',
         'node',
-        'fastify',
-        'postgres',
-        'drizzle',
+        'express',
+        'mongodb',
         'apiRest',
       ],
       link: 'https://github.com/wolfhackd/Spotify-Project',
