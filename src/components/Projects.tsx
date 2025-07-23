@@ -67,6 +67,26 @@ export const Projects = () => {
       ],
       link: 'https://github.com/wolfhackd/let-me-ask',
     },
+    {
+      title: 'Spotify',
+      description: 'Website de música parecido com o spotify',
+      images: ['/spotify.jpg', '/spotify2.jpg', '/spotify3.jpg'],
+      technologies: [
+        'react',
+        'vite',
+        'typescript',
+        'tailwind',
+        'reactRouter',
+        'reactQuery',
+        'hooks',
+        'node',
+        'fastify',
+        'postgres',
+        'drizzle',
+        'apiRest',
+      ],
+      link: 'https://github.com/wolfhackd/Spotify-Project',
+    },
   ];
 
   return (
