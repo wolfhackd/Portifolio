@@ -72,10 +72,14 @@ export const Home = () => {
         <Projects />
       </div>
 
-      <div className="flex w-full flex-col items-center">
+      <div
+        className="flex h-28 w-full items-center justify-around font-bold"
+        id="contato"
+      >
         <p>
-          Email:
+          Email:{' '}
           <a
+            className="underline"
             href="mailto:mauro.costa.12.j@hotmail.com?subject=Contato%20via%20Portfólio&body=Olá%20Mauro,%20gostaria%20de%20conversar%20sobre..."
             rel="noopener"
             target="_blank"
@@ -84,18 +88,28 @@ export const Home = () => {
           </a>
         </p>
         <p>
-          Whatssap:
-          <a href="https://wa.me/5581996676623" rel="noopener" target="_blank">
+          Whatssap:{' '}
+          <a
+            className="underline"
+            href="https://wa.me/5581996676623"
+            rel="noopener"
+            target="_blank"
+          >
             +5581996676623
           </a>
         </p>
         <p>
-          <a href="https://www.linkedin.com/in/mauro-leal-b1134425a/">
+          <a
+            className="underline"
+            href="https://www.linkedin.com/in/mauro-leal-b1134425a/"
+          >
             Linkedin
           </a>
         </p>
         <p>
-          <a href="https://github.com/wolfhackd">GitHub</a>
+          <a className="underline" href="https://github.com/wolfhackd">
+            GitHub
+          </a>
         </p>
       </div>
     </div>
