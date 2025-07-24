@@ -73,6 +73,9 @@ export const Projects = () => {
     cypress: { name: 'Cypress', color: 'bg-green-500' },
     vitest: { name: 'Vitest', color: 'bg-lime-500' },
     figma: { name: 'Figma', color: 'bg-pink-500' },
+
+    // API
+    gemini: { name: 'Gemini', color: 'bg-blue-400' },
   };
 
   const PROJECTS: Project[] = [
@@ -80,7 +83,7 @@ export const Projects = () => {
       title: 'Let Me Ask',
       description:
         'O Let Me Ask é um app de perguntas e respostas em tempo real para lives e eventos, onde os participantes podem enviar questões, votar nas mais relevantes e acompanhar se já foram respondidas. A proposta é organizar a participação do público, promovendo engajamento e clareza na comunicação.',
-      images: ['/letmeask1.jpeg', '/letmeask2.jpeg'],
+      images: ['/letmeaskone.jpeg', '/letmeasktwo.jpeg'],
       technologies: [
         'react',
         'vite',
@@ -112,6 +115,25 @@ export const Projects = () => {
         'express',
         'mongodb',
         'apiRest',
+      ],
+      link: 'https://github.com/wolfhackd/Spotify-Project',
+    },
+    {
+      title: 'Portugenio',
+      description:
+        'O Portugenio é um projeto web voltado para o ensino e aprimoramento da língua portuguesa, com foco inicial na gramática. A plataforma utiliza inteligência artificial para oferecer correções automáticas, explicações personalizadas e exemplos práticos, tornando o aprendizado mais dinâmico e interativo.',
+      images: ['/portugenio.jpeg', '/portugenio2.jpeg'],
+      technologies: [
+        'react',
+        'gemini',
+        'vite',
+        'typescript',
+        'tailwind',
+        'fastify',
+        'hooks',
+        'node',
+        'apiRest',
+        'docker',
       ],
       link: 'https://github.com/wolfhackd/Spotify-Project',
     },
