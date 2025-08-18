@@ -1,41 +1,53 @@
+import clsx from 'clsx';
 import { Button } from './ui/button';
 
-type NavItens = {
+type NavItem = {
   label: string;
   path: string;
 };
 
 export const Navbar = () => {
-  const navItens: NavItens[] = [
+  const navItems: NavItem[] = [
     { label: 'Projetos', path: 'projetos' },
+    { label: 'Tecnologias', path: 'tecnologias' },
     { label: 'Contato', path: 'contato' },
   ];
+
+  const currentHash = typeof window !== 'undefined' ? window.location.hash : '';
+
   return (
-    <div className="flex items-center justify-between ">
-      {/** biome-ignore lint/performance/noImgElement: <only use> */}
-      <img alt="Logo da ML" className="h-20 w-20" src="/ml.png" />
-      <nav>
-        {navItens.map((item) => (
-          <Button
-            asChild
-            className="cursor-pointer lg:text-lg"
-            key={item.path}
-            variant={'link'}
-          >
-            <a href={`#${item.path}`}>{item.label}</a>
-          </Button>
-        ))}
-        <Button
-          asChild
-          className="cursor-pointer hover:bg-red-700"
-          size={'lg'}
-          variant={'destructive'}
-        >
-          <a download="Mauro-Leal-CV.pdf" href="/mauro-leal-cv.pdf">
-            Baixar CV
-          </a>
-        </Button>
-      </nav>
-    </div>
+    <nav className="flex w-full items-center justify-center gap-6 bg-black py-4">
+      <ul className="flex gap-6">
+        {navItems.map((item) => {
+          const isActive = currentHash === `#${item.path}`;
+
+          return (
+            <li key={item.path}>
+              <a
+                className={clsx(
+                  'cursor-pointer font-semibold text-sm uppercase transition-colors lg:text-md',
+                  isActive
+                    ? 'border-white border-b-4 text-white'
+                    : 'text-gray-300 hover:text-white'
+                )}
+                href={`#${item.path}`}
+              >
+                {item.label}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <Button
+        asChild
+        className="cursor-pointer"
+        size={'lg'}
+        variant={'outline'}
+      >
+        <a download="Mauro-Leal-CV.pdf" href="/mauro-leal-cv.pdf">
+          Baixar CV
+        </a>
+      </Button>
+    </nav>
   );
 };

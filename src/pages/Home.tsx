@@ -1,117 +1,134 @@
-import { Github, Linkedin } from 'lucide-react';
+import {
+  ChevronDown,
+  Github,
+  LinkedinIcon,
+  LucideGithub,
+  Mail,
+  MessageCircle,
+} from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
-import { Projects } from '@/components/Projects';
-import { Button } from '@/components/ui/button';
+import { Projects, TECHNOLOGIES } from '@/components/Projects';
 
 export const Home = () => {
   return (
-    <div className="w-full">
-      <div className="flex min-h-screen w-full flex-col px-4 py-4 md:px-7 md:py-7">
+    <div className="w-full overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="min-h-screen w-full bg-[radial-gradient(circle,rgba(999,999,999,1)_0%,rgba(148,187,233,1)_100%)]">
         <Navbar />
 
-        {/* Conteúdo principal */}
-        <div className="mt-auto flex flex-col gap-10 pb-10 md:flex-row md:justify-between md:gap-6">
-          {/* Ícones GitHub e LinkedIn */}
-          <div className="flex justify-center gap-6 md:justify-start">
+        <div className="mt-8 flex flex-1 flex-col items-center justify-center space-y-10 px-4 text-center">
+          {/* Logo */}
+          <div className="flex h-28 w-28 items-center justify-center rounded-full border-2 border-black border-dashed">
+            <h1 className="font-bold text-5xl">ML</h1>
+          </div>
+
+          {/* Headings */}
+          <h2 className="font-bold text-3xl uppercase md:text-4xl">
+            Oi, eu sou Mauro Leal
+          </h2>
+          <h3 className="font-extralight text-2xl uppercase md:text-4xl">
+            Desenvolvedor FullStack
+          </h3>
+
+          <div className="flex gap-4">
             <a
               href="https://github.com/wolfhackd"
               rel="noopener"
               target="_blank"
             >
-              <Github className="h-6 w-6 cursor-pointer md:h-8 md:w-8" />
+              <LucideGithub className="h-8 w-8" />
             </a>
             <a
               href="https://www.linkedin.com/in/mauro-leal-b1134425a/"
               rel="noopener"
               target="_blank"
             >
-              <Linkedin className="h-6 w-6 cursor-pointer md:h-8 md:w-8" />
+              <LinkedinIcon className="h-8 w-8" />
             </a>
           </div>
 
-          {/* Coluna texto + botão */}
-          <div className="flex flex-col items-center space-y-6 text-center md:w-96 md:items-start md:space-y-10 md:text-left">
-            {/** biome-ignore lint/performance/noImgElement: <Only use> */}
-            <img
-              alt="Esse Sou eu"
-              className="mx-auto w-24 rounded-full md:mx-0 md:w-36"
-              src="/me.png"
-            />
-            <div className="font-bold text-4xl text-[#575555] leading-tight md:text-8xl">
-              <h1>Mauro</h1>
-              <h1 className="text-right">Leal</h1>
-            </div>
-            <h2 className="font-bold text-[#575555] text-xl uppercase md:text-2xl">
-              DESENVOLVEDOR FULLSTACK
-            </h2>
-            <p className="max-w-md px-4 text-[#575555] md:px-0">
-              Sou Mauro Leal, 21 anos, estudante de Análise e Desenvolvimento de
-              Sistemas e desenvolvedor full stack. Trabalho com JavaScript,
-              TypeScript, Node.js, React, entre outras tecnologias, e já
-              desenvolvi aplicativos e sistemas web completos.
-            </p>
-            <Button
-              asChild
-              className="mx-auto cursor-pointer hover:bg-red-700 md:mx-0"
-              size={'lg'}
-              variant={'destructive'}
-            >
-              <a href="#projetos">Meus Projetos</a>
-            </Button>
-          </div>
+          {/* Description */}
+          <p className="mx-auto w-[90%] text-justify font-medium text-lg md:w-[60%] md:text-xl lg:text-2xl">
+            Sou Mauro Leal, 21 anos, estudante de Análise e Desenvolvimento de
+            Sistemas e desenvolvedor full stack. Trabalho com JavaScript,
+            TypeScript, Node.js, React, entre outras tecnologias, e já
+            desenvolvi aplicativos e sistemas web completos.
+          </p>
 
-          {/* Coluna imagem grande */}
-          <div className="hidden md:block">
-            {/** biome-ignore lint/performance/noImgElement: <only dev> */}
-            <img alt="Minha imagem" className="h-[528px]" src="/Mauro.png" />
-          </div>
+          {/* Scroll icon */}
+          <ChevronDown className="h-10 w-10 animate-bounce text-gray-800" />
         </div>
-      </div>
+      </section>
 
-      <div className="bg-black" id="projetos">
+      {/* Projetos */}
+      <section className="py-20" id="projetos">
+        <h1 className="text-center font-bold text-4xl">Projetos</h1>
         <Projects />
-      </div>
+      </section>
 
-      <div
-        className="flex h-28 w-full items-center justify-around font-bold"
-        id="contato"
-      >
-        <p>
-          Email:{' '}
+      {/* Tecnologias */}
+      <section className="py-20" id="tecnologias">
+        <h1 className="mb-12 text-center font-bold text-4xl">Tecnologias</h1>
+
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {Object.values(TECHNOLOGIES).map((tech, index) => (
+            <div
+              className={`flex flex-col items-center justify-center rounded-lg p-4 shadow-md transition-transform hover:scale-105 ${tech.color} text-white`}
+              key={index}
+            >
+              <span className="font-semibold">{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contatos */}
+      <section className="bg-gray-100 py-20" id="contatos">
+        <h1 className="mb-12 text-center font-bold text-4xl">Contatos</h1>
+
+        <div className="flex flex-wrap justify-center gap-6">
+          {/* WhatsApp */}
           <a
-            className="underline"
-            href="mailto:mauro.costa.12.j@hotmail.com?subject=Contato%20via%20Portfólio&body=Olá%20Mauro,%20gostaria%20de%20conversar%20sobre..."
-            rel="noopener"
+            className="flex items-center gap-3 rounded-lg bg-green-500 px-6 py-4 text-white shadow-md transition-transform hover:scale-105"
+            href="https://wa.me/81996676623"
+            rel="noopener noreferrer"
             target="_blank"
           >
-            mauro.costa.12.j@hotmail.com
+            <MessageCircle />
+            <span>WhatsApp</span>
           </a>
-        </p>
-        <p>
-          Whatssap:{' '}
+
+          {/* Email */}
           <a
-            className="underline"
-            href="https://wa.me/5581996676623"
-            rel="noopener"
-            target="_blank"
+            className="flex items-center gap-3 rounded-lg bg-red-500 px-6 py-4 text-white shadow-md transition-transform hover:scale-105"
+            href="mailto:mauro.costa.12.j@hotmail.com"
           >
-            +5581996676623
+            <Mail className="ri-mail-line text-2xl" />
+            <span>Email</span>
           </a>
-        </p>
-        <p>
+
           <a
-            className="underline"
+            className="flex items-center gap-3 rounded-lg bg-blue-700 px-6 py-4 text-white shadow-md transition-transform hover:scale-105"
             href="https://www.linkedin.com/in/mauro-leal-b1134425a/"
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            Linkedin
+            <LinkedinIcon />
+            <span>LinkedIn</span>
           </a>
-        </p>
-        <p>
-          <a className="underline" href="https://github.com/wolfhackd">
-            GitHub
+
+          {/* GitHub */}
+          <a
+            className="flex items-center gap-3 rounded-lg bg-gray-800 px-6 py-4 text-white shadow-md transition-transform hover:scale-105"
+            href="https://github.com/wolfhackd"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Github />
+            <span>GitHub</span>
           </a>
-        </p>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };
