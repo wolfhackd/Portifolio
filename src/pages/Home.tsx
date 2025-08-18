@@ -83,7 +83,7 @@ export const Home = () => {
       </section>
 
       {/* Contatos */}
-      <section className="bg-gray-100 py-20" id="contatos">
+      <section className="bg-gray-100 py-20" id="contato">
         <h1 className="mb-12 text-center font-bold text-4xl">Contatos</h1>
 
         <div className="flex flex-wrap justify-center gap-6">
