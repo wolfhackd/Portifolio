@@ -134,7 +134,7 @@ const PROJECTS: Project[] = [
       'apiRest',
       'docker',
     ],
-    link: 'https://github.com/wolfhackd/Spotify-Project',
+    link: 'https://github.com/wolfhackd/PortuGenio',
   },
 ];
 
